@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('/images/login-bg.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 10px;
+    background: rgba(0, 0, 0, .1);
+    color: white;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 36px;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color .3s ease-in-out;
+    border: 3px solid white;
+    display: inline-block;
+}
+
+.login-main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .login-center {
+        display: flex;
+        width: 80%;
+        height: 75%;
+
+        .login-left {
+            width: 60%;
+            color: white;
+            text-align: center;
+
+            h1 {
+                font-size: 60px;
+                color: blue;
+            }
+
+            p {
+                line-height: 1.5;
+                font-size: 36px;
+                padding: 0px 100px;
+                margin: 30px 0px;
+            }
+
+            .btnHowToPlay {
+                background-color: #743d63;
+                border: 3px solid white;
+
+                &:hover {
+                    background-color: white;
+                    color: #743d63;
+                }
+            }
+        }
+
+        .login-right {
+            width: 40%;
+            text-align: center;
+            color: white;
+            font-size: 36px;
+
+            .login-form {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                margin: 0 auto;
+
+                .form-el {
+                    margin: 0px 0px 20px 0px;
+                    font-size: 30px;
+                    padding: 5px;
+                }
+
+                .btnLogin {
+                    margin-top: 20px;
+                    background-color: green;
+                    border: 3px solid white;
+
+                    &:hover {
+                        background-color: white;
+                        color: green;
+                    }
+                }
+
+                .btnRegister {
+                    background-color: red;
+                    border: 3px solid white;
+
+                    &:hover {
+                        background-color: white;
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}
