@@ -28,7 +28,7 @@ header {
 
 /* LOGIN */
 .login-main {
-    background: linear-gradient(to right, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),url('/images/login-bg.jpg');
+    background: linear-gradient(to right, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),url('../images/login-bg.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     height: 100vh;
@@ -122,7 +122,7 @@ header {
 /* HOW TO PLAY */
 .how-to-play {
     width: 100vw;
-    background: url('/images/how-to-play.jpg');
+    background: url('../images/how-to-play.jpg');
     background-size: 100% 100%;
     background-repeat: repeat;
 
@@ -149,7 +149,6 @@ header {
                 width: 50%;
                 font-size: 28px;
             }
-
 
         }
     }
