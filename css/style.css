@@ -6,7 +6,8 @@
 }
 
 body {
-  background: url("/images/login-bg.jpg");
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("/images/login-bg.jpg");
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/images/login-bg.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 100vh;
@@ -65,8 +66,8 @@ header {
 }
 
 .login-main .login-center .login-left h1 {
+  background-color: rgba(0, 0, 0, 0.5);
   font-size: 60px;
-  color: blue;
 }
 
 .login-main .login-center .login-left p {
@@ -91,6 +92,12 @@ header {
   text-align: center;
   color: white;
   font-size: 36px;
+}
+
+.login-main .login-center .login-right h2 {
+  color: white;
+  background-color: black;
+  font-size: 60px;
 }
 
 .login-main .login-center .login-right .login-form {
