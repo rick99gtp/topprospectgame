@@ -4,12 +4,10 @@
   box-sizing: border-box;
 }
 
-body {
-  background: linear-gradient(to right, rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)),url('../images/field.jpg');
-  background-size: cover;
-}
-
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 90px;
   color: #b1b8ba;
@@ -85,10 +83,13 @@ header .link-wrapper nav ul li a.signup:hover {
 }
 
 .hero {
-  height: calc(90vh - 90px);
+  height: 100vh;
   min-height: 300px;
   display: flex;
   align-items: center;
+  background: linear-gradient(to right, rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)),url('../images/field.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .hero .headline {
@@ -135,4 +136,118 @@ header .link-wrapper nav ul li a.signup:hover {
   font-weight: 100;
   line-height: 34px;
   font-family: "Proxima Nova", Helvetica, sans-serif;
+}
+
+.mouse-scroll-container {
+  width: 25px;
+  height: 50px;
+  border: 3px solid #fff;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+}
+
+.mouse-scroll-container .mouse-wheel {
+  position: absolute;
+  background-color: #fff;
+  width: 3px;
+  height: 6px;
+  border-radius: 25%;
+  left: 50%;
+  top: 5px;
+  transform: translateX(-50%);
+  animation: mouse-scroll 2s ease-in-out infinite;
+  opacity: 0;
+}
+
+.quote-section {
+  background: url('/images/quote-section.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-section .quote-top {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.quote-section .quote-top i {
+  color: #fff;
+}
+
+.quote-section .quote-top p {
+  font-size: 40px;
+  color: #fff;
+  margin: 0px 10px;
+  font-family: "Proxima Nova", Helvetica, sans-serif;
+}
+
+.quote-section .quote-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-section .quote-bottom p {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-family: 'Dancing Script', cursive;
+  color: #fff;
+  display: inline-block;
+}
+
+.quote-section .quote-bottom p::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 40px;
+  background-color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -60px;
+  z-index: 1;
+}
+
+.quote-section .quote-bottom p::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 40px;
+  background-color: #000;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -60px;
+  z-index: 1;
+}
+
+@keyframes mouse-scroll {
+  0% {
+    opacity: 0;
+    top: 5px;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+    top: 20px;
+  }
+
+  100% {
+    opacity: 0;
+    top: 20px;
+  }
 }
