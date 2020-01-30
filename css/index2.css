@@ -11,7 +11,7 @@ header {
   left: 0;
   width: 100%;
   height: 90px;
-  color: #fff;
+  color: #A2AAAC;
   line-height: 27px;
 }
 
@@ -166,26 +166,46 @@ header .link-wrapper nav ul li a.signup:hover {
   background-attachment: fixed;
   height: 50vh;
   display: flex;
+  justify-content: center;}
+
+.quote-section .quote-bg {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .quote-section .quote-top {
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  margin-bottom: 50px;
+  justify-content: center;
+  text-align: justify;
+  line-height: 1.5;
 }
 
 .quote-section .quote-top i {
   color: #fff;
 }
 
+.quote-section .quote-top i:nth-child(1) {
+  margin-top: -20px;
+  margin-right: 20px;
+}
+
+.quote-section .quote-top i:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: -20px;
+  margin-left: 20px;
+}
+
 .quote-section .quote-top p {
   font-size: 40px;
   color: #fff;
   margin: 0px 10px;
+  transition: opacity 1s ease-in-out;
 }
 
 .quote-section .quote-bottom {
@@ -310,6 +330,21 @@ header .link-wrapper nav ul li a.signup:hover {
   font-size: 60px;
   text-align: center;
   text-transform: uppercase;
+}
+
+@keyframes el-fade-in {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes mouse-scroll {
