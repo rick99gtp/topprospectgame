@@ -55,11 +55,12 @@ header .link-wrapper nav ul li a.login {
   padding: 10px 18px;
   transition: all 350ms;
   font-weight: bold;
+  border-radius: 7px;
 }
 
 header .link-wrapper nav ul li a.login:hover {
   color: #fff;
-  background-color: #F16726;
+  background-color: rgb(29, 126, 181);
 }
 
 header .link-wrapper nav ul li a:hover {
@@ -74,6 +75,7 @@ header .link-wrapper nav ul li a.signup {
   padding: 10px 18px;
   transition: all 350ms;
   font-weight: bold;
+  border-radius: 7px;
 }
 
 header .link-wrapper nav ul li a.signup:hover {
@@ -166,7 +168,9 @@ header .link-wrapper nav ul li a.signup:hover {
   background-attachment: fixed;
   height: 50vh;
   display: flex;
-  justify-content: center;}
+  justify-content: center;
+  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%); */
+}
 
 .quote-section .quote-bg {
   width: 40%;
@@ -181,7 +185,7 @@ header .link-wrapper nav ul li a.signup:hover {
   opacity: 0;
   margin-bottom: 50px;
   justify-content: center;
-  text-align: justify;
+  text-align: center;
   line-height: 1.5;
 }
 
@@ -256,7 +260,6 @@ header .link-wrapper nav ul li a.signup:hover {
 .scoresheets {
   position: relative;
   height: 75vh;
-  width: 100vw;
   display: flex;
   align-items: center;
 }
@@ -264,15 +267,15 @@ header .link-wrapper nav ul li a.signup:hover {
 .scoresheets .scoresheet-bg {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 15%;
   background: url('../images/Scoresheet_1.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 85% 50%;
   height: 75vh;
-  width: 100vw;
+  width: 30vw;
 }
-
+ 
 .scoresheets .scoresheet-left {
   width: 60%;
 }
@@ -287,7 +290,7 @@ header .link-wrapper nav ul li a.signup:hover {
   display: block;
   text-align: center;
   padding: 10px 15px;
-  background-color: #F16726;
+  background-color: #f16726;
   border: 1px solid #20292b;
   opacity: 0.9;
   padding: 10px 18px;
@@ -297,6 +300,7 @@ header .link-wrapper nav ul li a.signup:hover {
   margin: 0 auto;
   text-decoration: none;
   color: #fff;
+  border-radius: 7px;
 }
 
 .scoresheets .scoresheet-left .left-details a:hover {
@@ -333,6 +337,62 @@ header .link-wrapper nav ul li a.signup:hover {
   font-size: 60px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.donation {
+  background: linear-gradient(to right, rgba(180, 80, 30, .7),rgba(180, 80, 30, .3)), url('../images/donation.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 60%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.donation .donation-inner {
+  width: 60%;
+  padding: 150px;
+  margin-right: 50px;
+  margin-top: 50px;
+}
+
+.donation .donation-inner h2 {
+  text-align: center;
+  font-size: 60px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.donation .donation-inner a {
+  display: block;
+  text-decoration: none;
+  margin: 75px auto;
+  text-align: center;
+  color: #fff;
+  background-color: rgb(29, 126, 181);
+  width: 30%;
+  padding: 20px 30px;
+  font-weight: bold;
+  border: 3px solid #fff;
+  font-size: 28px;
+  transition: .4s ease-in-out;
+  border-radius: 7px;
+}
+
+.donation .donation-inner a:hover {
+  background-color: #fff;
+  color: rgb(29, 126, 181);
+}
+
+.donation .donation-inner p {
+  font-size: 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.coming-soon {
+  background: url('../images/coming-soon.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 @keyframes el-fade-in {
