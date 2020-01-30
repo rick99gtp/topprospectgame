@@ -390,9 +390,68 @@ header .link-wrapper nav ul li a.signup:hover {
 }
 
 .coming-soon {
-  background: url('../images/coming-soon.jpg');
+  background: linear-gradient(to left, rgba(0, 146, 0, 0.3), rgba(0, 148, 0, .2)),url('../images/coming-soon.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 0% 40%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 50px;
+}
+
+.coming-soon .coming-soon-inner {
+  width: 60%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.coming-soon .coming-soon-inner .coming-soon-center {
+  width: 60%;
+  text-align: left;
+}
+
+.coming-soon .coming-soon-inner .coming-soon-center h2 {
+  font-size: 60px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.coming-soon .coming-soon-inner .coming-soon-center p {
+  font-size: 24px;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.coming-soon .coming-soon-inner .coming-soon-center p:nth-child(4) {
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.coming-soon .coming-soon-inner .coming-soon-center p:nth-child(6) {
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+input[type=email] {
+  font-size: 24px;
+  margin: 15px -4px 15px 0;
+  padding: 10px;
+}
+
+input[type=submit] {
+  font-size: 24px;
+  padding: 12px 20px;
+  cursor: pointer;
+  background-color: rgb(255, 85, 0);
+  border: none;
+  text-decoration: none;
+  color: #fff;
 }
 
 @keyframes el-fade-in {
