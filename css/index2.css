@@ -285,6 +285,18 @@ header .link-wrapper nav ul li a.signup:hover {
   width: 50%;
   margin: 0 auto;
   font-size: 24px;
+  position: relative;
+}
+
+.scoresheets .scoresheet-left .left-details::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  background-color: rgba(0, 0, 0, .05);
+  height: 120%;
+  width: 120%;
+  border-radius: 15px;
 }
 
 .scoresheets .scoresheet-left .left-details a {
