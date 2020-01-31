@@ -459,9 +459,15 @@ input[type=submit] {
   -webkit-box-shadow: 5px 5px 13px -2px rgba(0,0,0,0.75);
   -moz-box-shadow: 5px 5px 13px -2px rgba(0,0,0,0.75);
   box-shadow: 5px 5px 13px -2px rgba(0,0,0,0.75);
+  transition: .3s ease-in-out;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(255, 38, 0);
 }
 
 .footer {
+  position: relative;
   padding: 100px;
   text-align: center;
   background-image: linear-gradient(rgba(0, 0, 0, .8),rgba(0, 0, 0, .8)),url('../images/footer.png');
@@ -530,6 +536,14 @@ input[type=submit] {
 }
 
 .footer .social .icon i {
+  color: #fff;
+}
+
+.footer .cpy {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   color: #fff;
 }
 
