@@ -351,6 +351,7 @@ header .link-wrapper nav ul li a.signup:hover {
   background-position: 0% 60%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .donation .donation-inner {
