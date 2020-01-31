@@ -169,7 +169,6 @@ header .link-wrapper nav ul li a.signup:hover {
   height: 50vh;
   display: flex;
   justify-content: center;
-  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%); */
 }
 
 .quote-section .quote-bg {
@@ -207,7 +206,7 @@ header .link-wrapper nav ul li a.signup:hover {
 }
 
 .quote-section .quote-top p {
-  font-size: 40px;
+  font-size: 30px;
   color: #fff;
   margin: 0px 10px;
   transition: opacity 1s ease-in-out;
@@ -292,10 +291,10 @@ header .link-wrapper nav ul li a.signup:hover {
   content: '';
   position: absolute;
   top: -10%;
-  left: -10%;
+  left: -5%;
   background-color: rgba(0, 0, 0, .05);
   height: 120%;
-  width: 120%;
+  width: 110%;
   border-radius: 15px;
 }
 
@@ -571,6 +570,21 @@ input[type=submit]:hover {
   }
   25% {
     opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes el-fade-in-2 {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0;
   }
   75% {
     opacity: 1;

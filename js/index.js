@@ -40,7 +40,7 @@ window.addEventListener('scroll', function() {
 
         if(!quote_generator_started) {
             element_1.style.animation = "el-fade-in 6.5s ease-in-out infinite, el-shift-right 6.5s ease-out infinite";
-            element_2.style.animation = "el-fade-in 6.5s ease-in-out infinite, el-shift-left 6.5s ease-out infinite";
+            element_2.style.animation = "el-fade-in-2 6.5s ease-in-out infinite, el-shift-left 6.5s ease-out infinite";
             quote_generator_started = true;
             getQuote();
             startQuoteGenerator();
