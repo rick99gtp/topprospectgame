@@ -340,6 +340,10 @@ header .link-wrapper nav ul li a.signup:hover {
   text-transform: uppercase;
 }
 
+.scoresheets .scoresheet-left .left-details h2 span {
+  color: #A2AAAC;
+}
+
 .donation {
   background: linear-gradient(to right, rgba(180, 80, 30, .7),rgba(180, 80, 30, .3)), url('../images/donation.jpg');
   background-size: cover;
@@ -473,7 +477,7 @@ input[type=submit]:hover {
   background-image: linear-gradient(rgba(0, 0, 0, .8),rgba(0, 0, 0, .8)),url('../images/footer.png');
   background-repeat: no-repeat;
   background-size: 100% 50%;
-  background-position: 50% 100%;
+  background-position: 50% 101%;
   background-attachment: fixed;
 }
 
@@ -532,7 +536,7 @@ input[type=submit]:hover {
 }
 
 .footer .social .icon:hover {
-  transform: scale(1.2);
+  transform: translateY(-5px);
 }
 
 .footer .social .icon i {
