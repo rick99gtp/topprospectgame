@@ -28,26 +28,23 @@ function getQuote() {
 
 }
 
+let element_1 = document.querySelector('.quote-top');
+let element_2 = document.querySelector('.quote-bottom');
+
 window.addEventListener('scroll', function() {
-    let element_1 = document.querySelector('.quote-top');
-    let element_2 = document.querySelector('.quote-bottom');
 
     let position_1 = element_1.getBoundingClientRect();
-    let position_2 = element_2.getBoundingClientRect();
 
 	// checking for partial visibility
 	if(position_1.top < (window.innerHeight - 100) && position_1.bottom >= 0) {
-        element_1.style.animation = "el-fade-in 6.5s ease-in-out infinite, el-shift-right 6.5s ease-out infinite";
-        element_2.style.animation = "el-fade-in 6.5s ease-in-out infinite, el-shift-left 6.5s ease-out infinite";
 
         if(!quote_generator_started) {
+            element_1.style.animation = "el-fade-in 6.5s ease-in-out infinite, el-shift-right 6.5s ease-out infinite";
+            element_2.style.animation = "el-fade-in 6.5s ease-in-out infinite, el-shift-left 6.5s ease-out infinite";
             quote_generator_started = true;
             getQuote();
             startQuoteGenerator();
         }
     }
-    
-    if(position_2.top < (window.innerHeight - 100) && position_2.bottom >= 0) {
-        element_2.style.opacity = 1;
-    }
+
 });
