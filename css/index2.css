@@ -358,7 +358,7 @@ header .link-wrapper nav ul li a.signup:hover {
   width: 60%;
   padding: 150px;
   margin-right: 50px;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 .donation .donation-inner h2 {
@@ -368,7 +368,7 @@ header .link-wrapper nav ul li a.signup:hover {
   text-transform: uppercase;
 }
 
-.donation .donation-inner a {
+.donation .donation-inner #donate-button {
   display: block;
   text-decoration: none;
   margin: 75px auto;
@@ -382,9 +382,10 @@ header .link-wrapper nav ul li a.signup:hover {
   font-size: 28px;
   transition: .4s ease-in-out;
   border-radius: 7px;
+  cursor: pointer;
 }
 
-.donation .donation-inner a:hover {
+.donation .donation-inner #donate-button:hover {
   background-color: #fff;
   color: rgb(29, 126, 181);
 }
