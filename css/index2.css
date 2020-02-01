@@ -45,6 +45,18 @@ header .link-wrapper nav ul li a {
   transition: opacity 350ms;
   text-decoration: none;
   color: #fff;
+  background-color: rgb(29, 126, 181);
+  border: 1px solid #20292b;
+  opacity: 0.9;
+  padding: 10px 18px;
+  transition: all 350ms;
+  font-weight: bold;
+  border-radius: 7px;
+}
+
+header .link-wrapper nav ul li a:hover {
+  color: #F16726;
+  background-color: #fff;
 }
 
 header .link-wrapper nav ul li a.login {
@@ -292,7 +304,7 @@ header .link-wrapper nav ul li a.signup:hover {
   position: absolute;
   top: -10%;
   left: -5%;
-  background-color: rgba(0, 0, 0, .05);
+  /* background-color: rgba(0, 0, 0, .05); */
   height: 120%;
   width: 110%;
   border-radius: 15px;
@@ -316,8 +328,8 @@ header .link-wrapper nav ul li a.signup:hover {
 }
 
 .scoresheets .scoresheet-left .left-details a:hover {
-  color: #000;
-  background-color: rgb(241, 170, 38);
+  color: #f16726;
+  background-color: #fff;
 }
 
 .scoresheets .scoresheet-left .left-details .scoresheet-desc {
@@ -412,7 +424,7 @@ header .link-wrapper nav ul li a.signup:hover {
   background: linear-gradient(to left, rgba(0, 146, 0, 0.3), rgba(0, 148, 0, .2)),url('../images/coming-soon.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 0% 40%;
+  background-position: 0% 50%;
   display: flex;
   justify-content: flex-start;
   padding: 50px;
