@@ -1,16 +1,67 @@
-<!DOCTYPE html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./css/index2.css">
-    </head>
+<?php
+    // Include config file
+    // require_once "config.php";
+    
+    // Processing form data when form is submitted
+    if(filter_has_var(INPUT_POST, 'submit')) {
+        $email = htmlspecialchars($_POST['email']);
+        if(!empty($email)) {
+        // passed
+            if(filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+                // failed validation
+                $msg = 'Please enter a valid email.';
+            }
+            else {
+                // passed validation
+
+                // setup automatic email
+                $toEmail = $email;
+                $subject = 'Thank you for subscribing!';
+                $body = "<h2>THANK YOU!</h2><p>We're just as excited to bring you a fun and new way to enjoy tabletop baseball gaming on your computer!</p>";
+
+                // email headers
+                $headers = "Reply-To: Digital Dugout <digidugout@digidugout.com>\r\n";
+                $headers .= "Return-Path: Digital Dugout <digidugout@digidugout.com>\r\n";
+                $headers .= "From: Digital Dugout <digidugout@digidugout.com>\r\n";
+                $headers .= "Organization: Sender Organization\r\n";
+                $headers .= "MIME-Version: 1.0\r\n";
+                $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+                $headers .= "X-Priority: 3\r\n";
+                $headers .= "X-Mailer: PHP/". phpversion() . "\r\n";
+                // $headers .= "From: digitaldugout.com"."\r\n";
+
+                // send email
+                if(mail($toEmail, $subject, $body, $headers)) {
+                    // email sent
+                    $msg = 'Thank you for your subscription!';
+                }
+                else {
+                    // email not sent
+                }
+            }
+        
+        }
+        else {
+            // failed
+            $msg = "Please enter a valid email";
+        }
+    }
+?>
+ 
+ <!DOCTYPE html>
+    <html class="no-js">
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <title>Digital Dugout</title>
+            <meta name="description" content="">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+            <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="./css/index2.css">
+        </head>
     <body>
+        <?php echo $msg ?>
         <header>
             <div class="link-wrapper">
                 <nav>
@@ -112,9 +163,14 @@
                     <p>We are very excited to announce that we are developing an online baseball game! While there isn't a release date, we are working hard to make it something that we can all enjoy.</p>
                     <p>There will be more information released in the coming weeks.  So, if you're interested in receiving updates on this exciting project, fill in your email address below and click the 'Notify Me' button.  We promise NOT to spam your inbox.</p>
                     <p>Get notified when we go live with the game!</p>
-                    <form>
-                        <input type="email" placeholder="Enter email address" name="email" />
-                        <input type="submit" value="Notify Me" class="notify-me" />
+                    <?php if($msg != ''): ?>
+                        <div>
+                            echo $msg; ?>
+                        </div>
+                    <?php endif; ?>
+                    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                        <input type="email" placeholder="Enter email address" name="email" value="<?php echo isset($_POST['email']) ? $email : ''; ?>" >
+                        <input type="submit" value="Notify Me" class="notify-me" name="submit" />
                     </form>
                 </div>
             </div>
