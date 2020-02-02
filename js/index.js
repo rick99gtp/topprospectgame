@@ -48,3 +48,11 @@ window.addEventListener('scroll', function() {
     }
 
 });
+
+let hidden_msg = document.querySelector('hidden-msg-shown');
+
+hidden_msg.addEventListener('animationend', removeHiddenMsg);
+
+function removeHiddenMsg() {
+    hidden_msg.classList.remove('hidden-msg-shown');
+}

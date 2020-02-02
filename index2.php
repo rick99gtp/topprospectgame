@@ -74,11 +74,16 @@
                             if(mysqli_stmt_execute($stmt)) {
                             // success
                                 $msg_class = 'hidden-msg-shown';
+                                $msg = 'Thank you for subscribing!';
                             }
                             else {
                                 $msg_class = '';
                             }
                         }
+                    }
+                    else {
+                        $msg = $msg_err;
+                        $msg_class = 'hidden-msg-shown';
                     }
 
                     mysqli_stmt_close($stmt);
@@ -112,7 +117,7 @@
         </head>
     <body>
         <div class="hidden-msg <?php echo $msg_class; ?>">
-            Thank you for subscribing!
+            <?php echo $msg; ?>
         </div>
         <header>
             <div class="link-wrapper">
