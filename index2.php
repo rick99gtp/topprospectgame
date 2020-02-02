@@ -2,7 +2,10 @@
     // Include config file
     require_once "config.php";
 
+    $msg = '';
     $msg_err = '';
+    $msg_class = '';
+    $email = '';
     
     // Processing form data when form is submitted
     if(filter_has_var(INPUT_POST, 'submit')) {
@@ -70,6 +73,10 @@
 
                             if(mysqli_stmt_execute($stmt)) {
                             // success
+                                $msg_class = 'hidden-msg-shown';
+                            }
+                            else {
+                                $msg_class = '';
                             }
                         }
                     }
@@ -104,8 +111,8 @@
             <link rel="stylesheet" href="./css/index2.css">
         </head>
     <body>
-        <div class="hidden-msg">
-
+        <div class="hidden-msg <?php echo $msg_class; ?>">
+            Thank you for subscribing!
         </div>
         <header>
             <div class="link-wrapper">
@@ -208,12 +215,6 @@
                     <p>We are very excited to announce that we are developing an online baseball game! We don't have a release date yet, however we are working hard to make it something that we can all enjoy.</p>
                     <p>There will be more information released in the coming weeks.  So, if you're interested in receiving updates on this exciting project, fill in your email address below and click the 'Notify Me' button.  We promise NOT to spam your inbox.</p>
                     <p>Get notified when we go live with the game!</p>
-                    <?php if($msg != ''): ?>
-                        <div class="msg"><?php
-                            echo $msg;
-                            ?>
-                        </div>
-                    <?php endif; ?>
                     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                         <input type="email" placeholder="Enter email address" name="email" value="<?php echo isset($_POST['email']) ? $email : ''; ?>" >
                         <input type="submit" value="Notify Me" class="notify-me" name="submit" />
