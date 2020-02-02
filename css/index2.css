@@ -521,6 +521,10 @@ input[type=submit]:hover {
   text-align: center;
 }
 
+.footer .social a {
+  text-decoration: none;
+}
+
 .footer .social .icon {
   width: 100px;
   height: 100px;
@@ -538,7 +542,7 @@ input[type=submit]:hover {
   background-position: center;
   background-size: cover;
 }
-
+/* 
 .footer .social .facebook::before {
   content: '';
   position: absolute;
@@ -547,7 +551,7 @@ input[type=submit]:hover {
   z-index: 1;
   height: 100%;
   width: 20%;
-}
+} */
 
 .footer .social .twitter {
   background: url('../images/homeplate-twitter.png');
@@ -555,11 +559,11 @@ input[type=submit]:hover {
   background-size: cover;
 }
 
-.footer .social .youtube {
+/* .footer .social .youtube {
   background: url('../images/homeplate-youtube.png');
   background-position: center;
   background-size: cover;
-}
+} */
 
 .footer .social .icon:hover {
   transform: translateY(-5px);

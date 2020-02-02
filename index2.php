@@ -1,6 +1,8 @@
 <?php
     // Include config file
-    // require_once "config.php";
+    require_once "config.php";
+
+    $msg_err = '';
     
     // Processing form data when form is submitted
     if(filter_has_var(INPUT_POST, 'submit')) {
@@ -40,6 +42,41 @@
                 if(mail($toEmail, $subject, $body, $headers)) {
                     // email sent
                     $msg = 'Thank you for your subscription!';
+
+                    // add to database
+                    $sql = "SELECT id FROM subscribers WHERE email = ?";
+
+                    if($stmt = mysqli_prepare($link, $sql)) {
+                        mysqli_stmt_bind_param($stmt, "s", $param_email);
+
+                        $param_email = $email;
+
+                        if(mysqli_stmt_execute($stmt)) {
+                            mysqli_stmt_store_result($stmt);
+
+                            if(mysqli_stmt_num_rows($stmt) == 1) {
+                                $msg_err = 'You have already subscribed!';
+                            }
+                        }
+                    }
+
+                    mysqli_stmt_close($stmt);
+
+                    if(empty($msg_err)) {
+                        $sql = "INSERT INTO subscribers (email) VALUES (?)";
+
+                        if($stmt = mysqli_prepare($link, $sql)) {
+                            mysqli_stmt_bind_param($stmt, "s", $param_email);
+
+                            if(mysqli_stmt_execute($stmt)) {
+                            // success
+                            }
+                        }
+                    }
+
+                    mysqli_stmt_close($stmt);
+
+                    mysqli_close($link);
                 }
                 else {
                     // email not sent
@@ -188,18 +225,17 @@
         <section class="footer">
             <h2>Follow Us On</h2>
             <div class="social">
-                <div class="facebook icon">
+            <a href="https://www.facebook.com/digidugout/"><div class="facebook icon">
                     <i class="fab fa-facebook-f fa-2x"></i>
-                </div>
-                <div class="twitter icon">
+                </div></a>
+                <a href="https://twitter.com/DigiDugout"><div class="twitter icon">
                     <i class="fab fa-twitter fa-2x"></i>
-                </div>
-                <div class="youtube icon">
+                </div></a>
+                <!-- <div class="youtube icon">
                     <i class="fab fa-youtube fa-2x"></i>
-                </div>
+                </div> -->
             </div>
             <p class="cpy"></p>
-
         </section>
 
         <script src="../js/index.js" async defer></script>
