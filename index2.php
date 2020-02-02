@@ -17,7 +17,14 @@
                 // setup automatic email
                 $toEmail = $email;
                 $subject = 'Thank you for subscribing!';
-                $body = "<h2>THANK YOU!</h2><p>We're just as excited to bring you a fun and new way to enjoy tabletop baseball gaming on your computer!</p>";
+                $body = "<html><body>";
+                $body .= "<h2>THANK YOU FOR SUBSCRIBING!</h2>";
+                $body .= "<p>We're just as excited to bring you a fun and new way to enjoy tabletop baseball gaming on your computer!</p>";
+                $body .= "<p>We hope you've been enjoying the Scoresheets.  We will be adding the 2019 season shortly so you can get started on your 2019 Season proejcts.</p>";
+                $body .= "Thanks again and if you have any questions please send an email to digidugout@gmail.com";
+                $body .= "<br />";
+                $body .= "<p>Rick @ Digital Dugout</p>";
+                $body .= "</body></html>";
 
                 // email headers
                 $headers = "Reply-To: Digital Dugout <digidugout@digidugout.com>\r\n";
@@ -28,7 +35,6 @@
                 $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
                 $headers .= "X-Priority: 3\r\n";
                 $headers .= "X-Mailer: PHP/". phpversion() . "\r\n";
-                // $headers .= "From: digitaldugout.com"."\r\n";
 
                 // send email
                 if(mail($toEmail, $subject, $body, $headers)) {
@@ -61,7 +67,9 @@
             <link rel="stylesheet" href="./css/index2.css">
         </head>
     <body>
-        <?php echo $msg ?>
+        <div class="hidden-msg">
+
+        </div>
         <header>
             <div class="link-wrapper">
                 <nav>
@@ -160,12 +168,13 @@
             <div class="coming-soon-inner">
                 <div class="coming-soon-center">
                     <h2>COMING SOON!</h2>
-                    <p>We are very excited to announce that we are developing an online baseball game! While there isn't a release date, we are working hard to make it something that we can all enjoy.</p>
+                    <p>We are very excited to announce that we are developing an online baseball game! We don't have a release date yet, however we are working hard to make it something that we can all enjoy.</p>
                     <p>There will be more information released in the coming weeks.  So, if you're interested in receiving updates on this exciting project, fill in your email address below and click the 'Notify Me' button.  We promise NOT to spam your inbox.</p>
                     <p>Get notified when we go live with the game!</p>
                     <?php if($msg != ''): ?>
-                        <div>
-                            echo $msg; ?>
+                        <div class="msg"><?php
+                            echo $msg;
+                            ?>
                         </div>
                     <?php endif; ?>
                     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
